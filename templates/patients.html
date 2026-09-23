@@ -5,7 +5,11 @@
     <h1>Patients on the ward</h1>
     <ul>
         {% for patient in patients %}
-            <li>{{ patient }}</li>
+            <li>
+                <strong>{{ patient.name }}</strong> —
+                age {{ patient.age }},
+                diagnosis: {{ patient.diagnosis }}
+            </li>
         {% endfor %}
     </ul>
 </body>

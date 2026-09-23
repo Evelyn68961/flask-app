@@ -20,7 +20,11 @@ def user_page(name):
 
 @app.route("/patients")
 def patients():
-    ward = ["Chen", "Wang", "Lin", "Huang", "Chang"]
+    ward = [
+        {"name": "Chen", "age": 68, "diagnosis": "COPD"},
+        {"name": "Wang", "age": 74, "diagnosis": "CHF"},
+        {"name": "Lin",  "age": 55, "diagnosis": "Pneumonia"},
+    ]
     return render_template("patients.html", patients=ward)
 
 if __name__ == "__main__":
