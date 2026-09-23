@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head><title>Ward Patients</title></head>
+<body>
+    <h1>Patients on the ward</h1>
+    <ul>
+        {% for patient in patients %}
+            <li>{{ patient }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

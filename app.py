@@ -18,5 +18,10 @@ def user_page(name):
     return render_template("index.html", 
                            name=name.title(), role="Pharmacist", city="Taipei")
 
+@app.route("/patients")
+def patients():
+    ward = ["Chen", "Wang", "Lin", "Huang", "Chang"]
+    return render_template("patients.html", patients=ward)
+
 if __name__ == "__main__":
     app.run()
