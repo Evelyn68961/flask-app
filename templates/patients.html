@@ -9,8 +9,14 @@
                 <strong>{{ patient.name }}</strong> —
                 age {{ patient.age }},
                 diagnosis: {{ patient.diagnosis }}
+                {% if patient.age >= 70 %}
+                    <span style="color: red;">(elderly — dose review needed)</span>
+                {% endif %}
             </li>
+        {% else %}
+            <li>No patients on the ward today.</li>
         {% endfor %}
     </ul>
+    <p>Total: {{ patients | length }} patient(s)</p>
 </body>
 </html>
