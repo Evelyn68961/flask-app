@@ -1,7 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head><title>Ward Patients</title></head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}Ward Patients{% endblock %}
+
+{% block content %}
     <h1>Patients on the ward</h1>
     <ul>
         {% for patient in patients %}
@@ -18,5 +19,4 @@
         {% endfor %}
     </ul>
     <p>Total: {{ patients | length }} patient(s)</p>
-</body>
-</html>
+{% endblock %}
