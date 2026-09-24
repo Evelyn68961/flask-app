@@ -1,0 +1,112 @@
+
+/* --- Layer 1: reset ------------------------- */
+/* Predictable box math; strip browser default page margins. */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Layer 2: typography -------------------- */
+/* System font stack + comfortable size, spacing, and color for long-form reading. */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    color: #222;
+}
+
+/* --- Layer 3: content container ------------- */
+/* Constrain line length; center on the page. */
+main {
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+/* --- Layer 4: header/footer match container - */
+/* Keep header and footer aligned with main's left/right edges. */
+header,
+footer {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* --- Layer 5: header polish ----------------- */
+/* Vertical rhythm, divider line, and softer nav links. */
+header {
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+header h1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+}
+
+header nav a {
+    color: #666;
+    font-size: 0.95rem;
+    text-decoration: none;
+    margin-right: 0.5rem;
+}
+
+header nav a:hover {
+    color: #222;
+    text-decoration: underline;
+}
+
+/* --- Layer 6: article typography ------------ */
+/* Heading sizes, paragraph and list spacing inside <main>. */
+main h1 {
+    font-size: 2rem;
+    margin: 0 0 1rem;
+}
+
+main h2 {
+    font-size: 1.4rem;
+    margin: 2rem 0 0.75rem;
+}
+
+main p {
+    margin: 0 0 1rem;
+}
+
+main ul {
+    padding-left: 1.5rem;
+    margin: 0 0 1rem;
+}
+
+main li {
+    margin-bottom: 0.5rem;
+}
+
+/* --- Layer 7: footer ------------------------ */
+/* Muted, smaller, with a top divider mirroring the header. */
+footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e5e5;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* --- Layer 8: warning badge ----------------- */
+/* Requires patients.html to use <span class="warning">…</span>
+   instead of inline style="color: red;". */
+.warning {
+    display: inline-block;
+    background: #fee;
+    color: #c00;
+    padding: 0.1rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    margin-left: 0.5rem;
+}

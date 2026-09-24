@@ -4,5 +4,24 @@
 
 {% block content %}
     <h1>Hello, {{ name }}!</h1>
-    <p>Role: {{ role }} — City: {{ city }}</p>
+    <p>Welcome to the clinical reference site. This is where I'll be collecting
+       notes on the drugs and topics I work with most often on the ward.</p>
+    <p>Below is a quick overview of what's here so far, and what's on the way.</p>
+
+    <h2>Currently indexed</h2>
+    <ul>
+        <li>Warfarin — INR targets, dose adjustment, bridging protocols</li>
+        <li>Amiodarone — loading regimens, TDM, pulmonary and thyroid toxicity monitoring</li>
+        <li>Vancomycin — AUC-guided dosing, TDM in critical care and renal impairment</li>
+        <li>Piperacillin/tazobactam — extended-infusion protocols in gram-negative bacteremia</li>
+    </ul>
+
+    <h2>About the reader</h2>
+    <p>Role: {{ role }}. Currently based in {{ city }}. This site is being built
+       alongside a Flask learning course — every visible piece here corresponds
+       to one lesson.</p>
+
+    <p>The design is deliberately plain: readable typography, generous line
+       spacing, and no visual noise. If a diagram or a table would help, it goes
+       on the article page for that specific topic, not on this landing page.</p>
 {% endblock %}
