@@ -22,7 +22,7 @@ body {
 /* --- Layer 3: content container ------------- */
 /* Constrain line length; center on the page. */
 main {
-    max-width: 720px;
+    max-width: 960px;
     margin: 2rem auto;
     padding: 0 1.5rem;
 }
@@ -31,7 +31,7 @@ main {
 /* Keep header and footer aligned with main's left/right edges. */
 header,
 footer {
-    max-width: 720px;
+    max-width: 960px;
     margin: 0 auto;
     padding: 0 1.5rem;
 }
