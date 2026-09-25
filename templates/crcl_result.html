@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}CrCl Result{% endblock %}
+
+{% block content %}
+    <h1>CrCl result</h1>
+
+    <p><strong>Estimated CrCl: {{ crcl }} mL/min</strong></p>
+
+    <p>Inputs:</p>
+    <ul>
+        <li>Age: {{ age }} years</li>
+        <li>Sex: {{ sex }}</li>
+        <li>Weight: {{ weight }} kg</li>
+        <li>SCr: {{ scr }} mg/dL</li>
+    </ul>
+
+    <p><a href="/crcl">Calculate another</a></p>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}CrCl Calculator{% endblock %}
+
+{% block content %}
+    <h1>Cockcroft-Gault CrCl calculator</h1>
+    <p>Enter patient parameters below to estimate creatinine clearance.</p>
+
+    <form action="/crcl" method="POST">
+        <p>
+            <label>Age (years):
+                <input type="number" name="age" required>
+            </label>
+        </p>
+        <p>
+            <label>Sex:
+                <select name="sex" required>
+                    <option value="">-- select --</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </label>
+        </p>
+        <p>
+            <label>Weight (kg):
+                <input type="number" step="0.1" name="weight" required>
+            </label>
+        </p>
+        <p>
+            <label>Serum creatinine (mg/dL):
+                <input type="number" step="0.01" name="scr" required>
+            </label>
+        </p>
+        <p>
+            <button type="submit">Calculate</button>
+        </p>
+    </form>
+{% endblock %}
