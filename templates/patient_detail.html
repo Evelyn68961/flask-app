@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}{{ patient.name }} — Patient detail{% endblock %}
+
+{% block content %}
+    <h1>{{ patient.name }}</h1>
+    <ul>
+        <li>Age: {{ patient.age }}</li>
+        <li>Diagnosis: {{ patient.diagnosis }}</li>
+    </ul>
+    <p><a href="/patients">← Back to ward list</a></p>
+{% endblock %}

@@ -1,6 +1,12 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, abort
 
 app = Flask(__name__)
+
+WARD = [
+    {"name": "Chen", "age": 68, "diagnosis": "COPD"},
+    {"name": "Wang", "age": 74, "diagnosis": "CHF"},
+    {"name": "Lin",  "age": 55, "diagnosis": "Pneumonia"},
+]
 
 @app.route("/")
 def index():
@@ -20,12 +26,14 @@ def user_page(name):
 
 @app.route("/patients")
 def patients():
-    ward = [
-        {"name": "Chen", "age": 68, "diagnosis": "COPD"},
-        {"name": "Wang", "age": 74, "diagnosis": "CHF"},
-        {"name": "Lin",  "age": 55, "diagnosis": "Pneumonia"},
-    ]
-    return render_template("patients.html", patients=ward)
+    return render_template("patients.html", patients=WARD)
+
+@app.route("/patients/<name>")
+def patient_detail(name):
+    match = next((p for p in WARD if p["name"].lower() == name.lower()), None)
+    if match is None:
+        abort(404)
+    return render_template("patient_detail.html", patient=match)
 
 @app.route("/crcl", methods=["GET", "POST"])
 def crcl():
@@ -60,6 +68,16 @@ def crcl():
         weight=weight,
         scr=scr,
     )
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template("404.html"), 404
+
+
+@app.errorhandler(500)
+def server_error(error):
+    return render_template("500.html"), 500
+
 
 if __name__ == "__main__":
     app.run()
